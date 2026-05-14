@@ -529,14 +529,7 @@
   .info-item:last-of-type { border-bottom: none; }
   .info-item-icon { color: var(--cyan); flex-shrink: 0; margin-top: 2px; font-size: 0.9rem; }
   .info-item-text { font-size: 0.9rem; color: var(--muted); line-height: 1.5; }
-  .price-tag {
-    background: linear-gradient(135deg, var(--cyan-dim), var(--accent-dim));
-    border: 1px solid rgba(0,229,255,0.2);
-    padding: 1rem 1.5rem; margin: 1.5rem 0;
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .price-label { font-family: 'Syne', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); }
-  .price-val { font-family: 'Bebas Neue', sans-serif; font-size: 1.8rem; color: var(--cyan); }
+
   .other-services { max-width: 1000px; margin: 0 auto; }
   .other-title {
     font-family: 'Bebas Neue', sans-serif;
@@ -784,10 +777,7 @@
       <div class="info-card">
         <div class="info-card-title">★ What You Get</div>
         <div id="sp-outcomes"></div>
-        <div class="price-tag">
-          <span class="price-label">Starting From</span>
-          <span class="price-val" id="sp-price"></span>
-        </div>
+
         <button class="btn-primary" style="width:100%;clip-path:none;" id="sp-cta">Get a Quote for This Service</button>
       </div>
     </div>
@@ -837,7 +827,7 @@ const services = [
     description: "We build professional, mobile-responsive websites that are fast, beautiful, and built to grow your business. From landing pages to full business websites — we've got you covered.",
     includes: ["Custom design tailored to your brand", "Mobile-responsive layout", "Contact forms & WhatsApp integration", "Social media links", "Basic SEO setup", "Up to 5 pages"],
     outcomes: ["A professional online presence", "More trust from potential clients", "24/7 digital storefront", "Higher conversion rate"],
-    price: "GHS 800"
+
   },
   {
     slug: "mobile-app-development",
@@ -847,7 +837,7 @@ const services = [
     description: "Turn your business idea into a fully functional mobile app. We build clean, user-friendly apps for Android and iOS that give your customers a seamless experience.",
     includes: ["UI/UX design & wireframes", "Android & iOS builds", "Push notifications", "Admin dashboard", "App Store/Play Store submission", "30 days post-launch support"],
     outcomes: ["Your brand in customers' pockets", "Increased customer engagement", "Streamlined service delivery", "Competitive advantage"],
-    price: "GHS 2,500"
+
   },
   {
     slug: "flyer-poster-design",
@@ -857,7 +847,7 @@ const services = [
     description: "Whether for social media, print, or events — we design bold, professional flyers and posters that grab attention and communicate your message clearly.",
     includes: ["Custom graphic design", "Brand colour matching", "High-resolution print files", "Social media optimised versions", "Up to 3 revisions", "Fast 24-hour delivery"],
     outcomes: ["Stand-out marketing materials", "Consistent brand look", "Print & digital ready files", "More customer awareness"],
-    price: "GHS 80"
+
   },
   {
     slug: "logo-brand-identity",
@@ -867,7 +857,7 @@ const services = [
     description: "Your logo is the face of your business. We create memorable, versatile logos and complete brand identity kits — colours, fonts, and guidelines — that make you look professional and legit.",
     includes: ["3 unique logo concepts", "Final logo in all formats (PNG, SVG, PDF)", "Brand colour palette", "Typography selection", "Business card design", "Brand style guide"],
     outcomes: ["Professional first impression", "Consistent brand across all platforms", "Instant customer recognition", "Files ready for print & digital"],
-    price: "GHS 300"
+
   },
   {
     slug: "social-media-boost",
@@ -877,7 +867,7 @@ const services = [
     description: "We help you grow your social media presence organically and set up monetization — from Facebook pages to TikTok. Let your social media work for you, not the other way around.",
     includes: ["Page/profile setup & optimization", "Content strategy plan", "Hashtag & audience research", "Monetization setup (Meta, TikTok, YouTube)", "Engagement growth tactics", "Monthly performance report"],
     outcomes: ["More followers and engagement", "Revenue from your content", "Brand credibility online", "Wider audience reach"],
-    price: "GHS 500"
+
   },
   {
     slug: "website-hosting-domain",
@@ -887,7 +877,7 @@ const services = [
     description: "We handle the technical side — buying your domain name, setting up hosting, and getting your website live. No technical knowledge needed from you.",
     includes: ["Domain name purchase (.com/.net/.org/.gh)", "1-year hosting plan", "SSL certificate (https)", "Business email setup", "Uptime monitoring", "Annual renewal reminders"],
     outcomes: ["A real professional web address", "Secure, fast-loading website", "Professional business email", "Peace of mind — we handle it all"],
-    price: "GHS 250/yr"
+
   },
   {
     slug: "google-indexing-seo",
@@ -897,7 +887,7 @@ const services = [
     description: "We set up your website to rank on Google so that customers searching for your services can find you. From Google Search Console to on-page SEO — we make sure you're visible.",
     includes: ["Google Search Console setup", "Google My Business setup", "On-page SEO optimisation", "Sitemap & robots.txt setup", "Keyword research for your niche", "SEO health report"],
     outcomes: ["Show up on Google searches", "More organic website traffic", "Local customers find you first", "Long-term visibility with no ad spend"],
-    price: "GHS 400"
+
   }
 ];
 
@@ -1054,7 +1044,6 @@ function showService(slug) {
   document.getElementById('sp-title').textContent = service.label;
   document.getElementById('sp-tagline').textContent = service.tagline;
   document.getElementById('sp-desc').textContent = service.description;
-  document.getElementById('sp-price').textContent = service.price;
 
   document.getElementById('sp-includes').innerHTML = service.includes.map(item => `
     <div class="info-item">
