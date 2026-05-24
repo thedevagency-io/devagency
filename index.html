@@ -120,6 +120,25 @@
     .about-card { background: linear-gradient(145deg, #f0f0f8, #ffffff); }
     .info-card { background: linear-gradient(145deg, #f0f0f8, #ffffff); }
     .modal { background: linear-gradient(145deg, #ffffff, #f4f4f8); }
+
+    /* Fix hardcoded dark hover/background values */
+    .service-card:hover { background: linear-gradient(145deg, #e8e8f4, #f0f0fc); }
+    .modal { background: linear-gradient(145deg, #ffffff, #f4f4f8); }
+
+    /* Hero text readability in light mode */
+    .hero-title { color: #0d0d1a; text-shadow: 0 2px 12px rgba(0,0,0,0.08); }
+    .hero-title span {
+      color: var(--cyan);
+      text-shadow: 0 0 30px rgba(0,128,179,0.35), 0 0 60px rgba(0,128,179,0.15);
+    }
+    .hero-sub { color: rgba(13,13,26,0.65); }
+    .hero-badge { color: var(--cyan); background: rgba(0,128,179,0.1); border-color: rgba(0,128,179,0.25); }
+    .btn-outline { color: #0d0d1a; border-color: rgba(13,13,26,0.35); }
+    .btn-outline:hover { color: var(--cyan); border-color: var(--cyan); }
+
+    /* Section titles and descriptions */
+    .section-title { color: #0d0d1a; }
+    .hero-scroll { color: rgba(13,13,26,0.45); }
   }
 
   /* RGB animated glow on hero */
@@ -384,7 +403,7 @@
   .hero-title span {
     color: var(--cyan);
     display: block;
-    text-shadow: 0 0 40px rgba(0,229,255,0.5), 0 0 80px rgba(0,229,255,0.2);
+    text-shadow: 0 0 40px var(--cyan-glow), 0 0 80px rgba(0,229,255,0.15);
   }
 
   /* SECTION BASE */
@@ -500,7 +519,7 @@
     opacity: 0; transition: opacity 0.35s;
   }
   .service-card:hover {
-    background: linear-gradient(145deg, var(--card), #1a1a32);
+    background: linear-gradient(145deg, var(--card), var(--surface));
     transform: translateY(-6px) scale(1.01);
     border-color: rgba(0,229,255,0.3);
     box-shadow:
@@ -750,7 +769,7 @@
   }
   .modal-overlay.open { display: flex; }
   .modal {
-    background: linear-gradient(145deg, var(--card), #0e0e20);
+    background: linear-gradient(145deg, var(--card), var(--surface));
     border: 1px solid var(--border);
     border-top: 3px solid var(--cyan);
     width: 100%; max-width: 480px;
