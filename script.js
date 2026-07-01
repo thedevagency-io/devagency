@@ -303,3 +303,38 @@
       applyTheme(e.matches);
     });
   })();
+
+  // ── MOBILE SIDEBAR ──
+  (function() {
+    const burger  = document.getElementById('navBurger');
+    const sidebar = document.getElementById('mobileSidebar');
+    const overlay = document.getElementById('mobileSidebarOverlay');
+    const closeBtn = document.getElementById('mobileSidebarClose');
+    if (!burger || !sidebar || !overlay) return;
+
+    function openSidebar() {
+      sidebar.classList.add('active');
+      overlay.classList.add('active');
+      sidebar.setAttribute('aria-hidden', 'false');
+      burger.setAttribute('aria-expanded', 'true');
+      document.body.classList.add('sidebar-open');
+    }
+
+    function closeSidebar() {
+      sidebar.classList.remove('active');
+      overlay.classList.remove('active');
+      sidebar.setAttribute('aria-hidden', 'true');
+      burger.setAttribute('aria-expanded', 'false');
+      document.body.classList.remove('sidebar-open');
+    }
+
+    burger.addEventListener('click', openSidebar);
+    closeBtn.addEventListener('click', closeSidebar);
+    overlay.addEventListener('click', closeSidebar);
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') closeSidebar();
+    });
+    sidebar.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', closeSidebar);
+    });
+  })();
