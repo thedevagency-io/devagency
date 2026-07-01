@@ -610,30 +610,6 @@
   .footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.45); }
   .footer-bottom a { color: #7eb3ff; text-decoration: none; }
 
-  /* ── THEME TOGGLE ── */
-  .theme-toggle {
-    display: inline-flex; align-items: center; justify-content: center;
-    width: 36px; height: 36px;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    background: transparent;
-    color: var(--muted);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s, background 0.2s;
-    flex-shrink: 0;
-    margin-left: 1rem;
-  }
-  .theme-toggle:hover {
-    border-color: var(--accent);
-    color: var(--accent);
-    background: rgba(59,130,246,0.06);
-  }
-  .theme-toggle svg { width: 16px; height: 16px; fill: currentColor; }
-  .theme-toggle .icon-sun { display: none; }
-  .theme-toggle .icon-moon { display: block; }
-  [data-theme="dark"] .theme-toggle .icon-sun { display: block; }
-  [data-theme="dark"] .theme-toggle .icon-moon { display: none; }
-
   /* Dark mode section overrides */
   [data-theme="dark"] #cta { background: #070a10; }
   [data-theme="dark"] footer { background: #070a10; border-top-color: var(--border); }
