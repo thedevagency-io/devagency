@@ -282,27 +282,24 @@
   const inner = document.getElementById('marquee-inner');
   inner.innerHTML += inner.innerHTML;
 
-  // ── THEME TOGGLE ──
+  // ── THEME — follows device/OS theme automatically ──
   (function() {
-    const btn = document.getElementById('themeToggle');
     const root = document.documentElement;
-    const STORAGE_KEY = 'tda-theme';
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
 
-    // Apply saved or system preference on load
-    const saved = localStorage.getItem(STORAGE_KEY);
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (saved === 'dark' || (!saved && prefersDark)) {
-      root.setAttribute('data-theme', 'dark');
-    }
-
-    btn.addEventListener('click', function() {
-      const current = root.getAttribute('data-theme');
-      const next = current === 'dark' ? 'light' : 'dark';
-      if (next === 'dark') {
+    function applyTheme(isDark) {
+      if (isDark) {
         root.setAttribute('data-theme', 'dark');
       } else {
         root.removeAttribute('data-theme');
       }
-      localStorage.setItem(STORAGE_KEY, next);
+    }
+
+    // Set theme on load based on current device preference
+    applyTheme(media.matches);
+
+    // Live-update whenever the device theme is switched, no reload needed
+    media.addEventListener('change', function(e) {
+      applyTheme(e.matches);
     });
   })();
