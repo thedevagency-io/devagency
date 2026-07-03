@@ -304,6 +304,18 @@
     });
   })();
 
+  // ── WORK CARD LINKS (moved from inline onclick for CSP compliance) ──
+  (function() {
+    var lads = document.getElementById('workCardLads');
+    var ipre = document.getElementById('workCardIpre');
+    if (lads) lads.addEventListener('click', function() {
+      window.open('https://ladsfromghana-web.github.io/-website.io/', '_blank');
+    });
+    if (ipre) ipre.addEventListener('click', function() {
+      window.open('https://ipre-ordersgh.github.io/iPre-Orders-GH/', '_blank');
+    });
+  })();
+
   // ── MOBILE SIDEBAR ──
   (function() {
     const burger  = document.getElementById('navBurger');
