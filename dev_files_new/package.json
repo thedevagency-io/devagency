@@ -1,0 +1,16 @@
+{
+  "name": "thedevagency-backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Serverless backend for The Dev Agency enquiry form, plus the Works/Projects CMS",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
+    "resend": "^4.0.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.23.0"
+  },
+  "scripts": {
+    "build:cms-vendor": "esbuild assets/vendor/build-entry.js --bundle --format=iife --global-name=supabaseSDK --outfile=assets/vendor/supabase-client.min.js --minify --target=es2018"
+  }
+}
