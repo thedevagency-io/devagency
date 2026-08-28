@@ -1,4 +1,0 @@
-window.CMS_CONFIG = {
-  SUPABASE_URL: https://ljirqrzyytnsxctcofem.supabase.co,
-  SUPABASE_ANON_KEY: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxqaXJxcnp5eXRuc3hjdGNvZmVtIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODMwOTIxMjAsImV4cCI6MjA5ODY2ODEyMH0.zXAKYjZa-8tSbCz8sKDQljLTcfiKJXiA0M2zOUk1BpY,
-};
